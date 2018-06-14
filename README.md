@@ -1,2 +1,16 @@
-# webpack_test
-对webpack学习中遇到的问题进行的梳理
+# webpack_project
+
+## Introduction
+一个以webpack4为基础的现代工程模版
+
+## Install
+
+> npm install
+
+## build
+
+> npm build
+
+## start
+
+> npm start
