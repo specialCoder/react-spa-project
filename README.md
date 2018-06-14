@@ -5,12 +5,12 @@
 
 ## Install
 
-> npm install
+    npm install
 
 ## build
 
-> npm build
+    npm build
 
 ## start
 
-> npm start
+    npm start
