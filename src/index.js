@@ -3,6 +3,7 @@
  import Icon from './blue.png';
  import printMe from './print.js';
  import { cube } from './math.js';
+ import './style.css';
 
  if (process.env.NODE_ENV !== 'production') {
    console.log('Looks like we are in development mode!');

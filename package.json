@@ -4,11 +4,8 @@
   "description": "learning webpack completely",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "webpack": "webpack --config webpack.config.js",
-    "devWebpack":"webpack --config webpack.dev.js",
-    "start": "node server.js",
-    "test": "node test.js"
+    "build": "NODE_ENV=production webpack --config webpack.prod.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

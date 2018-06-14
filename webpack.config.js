@@ -3,11 +3,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const url = path.resolve('/a/c','/b');
-const dirname = __dirname;
-console.log('url----->',url);
-console.log('dirname ---->',dirname);
-
 module.exports = {
   entry: {
     App:'./src/index.js',
