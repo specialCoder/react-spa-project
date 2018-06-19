@@ -2,8 +2,6 @@ const path = require('path');// node的path模块
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');// 清除指定的文件夹
 const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true'
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const env = process.env.NODE_ENV;
 
 module.exports = {
   // entry: {
