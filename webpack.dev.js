@@ -14,7 +14,6 @@
       new HtmlWebpackPlugin({
         title: 'Production', // 指定html文件的title标签内容
         template:'./src/index.html', // 指定要使用的模版
-        // chunk:['vendor']
       }),
       new webpack.NamedModulesPlugin(),// 当开启 HMR 的时候使用该插件会显示模块的相对路径，建议用于开发环境
       new webpack.HotModuleReplacementPlugin(),
@@ -22,5 +21,5 @@
         context: __dirname,
         manifest: require('./manifest/manifest.json'),
     }),
-   ]
+   ],
  });

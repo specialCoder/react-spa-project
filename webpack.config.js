@@ -2,14 +2,13 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const devMode = process.env.NODE_ENV !== 'production'
 module.exports = {
   entry: {
     App:'./src/index.js',
     common:'./src/common.js',
-    // css/style:'./src/style.css' -> dist/css/style.css
-    // 'webpack-hot-middleware/client?noInfo=true&reload=true',
-    // print:'./src/print.js',
   },
   output: {
     filename: '[name].bundle.[hash].js',
@@ -19,13 +18,14 @@ module.exports = {
   mode:'development',
   devtool: 'inline-source-map',
   module:{
-      rules:[{
-          test:/\.css$/,
-          use:[
-            'style-loader',
-            'css-loader'
+      rules:[
+        {
+          test: /\.(sa|sc|c)ss$/,
+          use: [
+            devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+            'css-loader',
           ],
-      },
+        },
       {
          test: /\.(png|svg|jpg|gif)$/,
          use: [
@@ -72,8 +72,11 @@ module.exports = {
       }),
       new CleanWebpackPlugin(['dist']),
       new webpack.HotModuleReplacementPlugin(),// 模块热替换
-      new webpack.optimize.CommonsChunkPlugin({
-        name:'common'
-      }),
+      new MiniCssExtractPlugin({
+        // Options similar to the same options in webpackOptions.output
+        // both options are optional
+        filename: devMode ? '[name].css' : '[name].[hash].css',
+        chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+      })
     ]
 };
