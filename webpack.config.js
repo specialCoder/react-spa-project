@@ -71,10 +71,9 @@ module.exports = {
         template:'./src/index.html',// 模版
       }),
       new CleanWebpackPlugin(['dist']),
-      // new webpack.NamedModulesPlugin(), // 需要吗？
-      // new webpack.HotModuleReplacementPlugin(),// 模块热替换  自动刷新：webpack-dev.middleware
-      // new webpack.optimize.CommonsChunkPlugin({
-      //   name:'common'
-      // }),
+      new webpack.HotModuleReplacementPlugin(),// 模块热替换
+      new webpack.optimize.CommonsChunkPlugin({
+        name:'common'
+      }),
     ]
 };
