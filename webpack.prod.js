@@ -11,6 +11,27 @@
         another:'./src/another-module.js'
     },
      mode:'production',
+     optimization: {
+        splitChunks: {
+            chunks: 'initial', // 只对入口文件处理
+            cacheGroups: {
+                vendor: { // split `node_modules`目录下被打包的代码到 `page/vendor.js && .css` 没找到可打包文件的话，则没有。css需要依赖 `ExtractTextPlugin`
+                    test: /node_modules\//,
+                    priority: 10,
+                    enforce: true
+                },
+                commons: { // split `common`和`components`目录下被打包的代码到`page/commons.js && .css`
+                    // test: /common\/|components\//,
+                    test:'./src',
+                    name: 'common',
+                    minSize:30000,
+                    minChunks:2,
+                    priority: 10,
+                    enforce: true
+                }
+            }
+        },
+    },
      plugins:[
         new HtmlWebpackPlugin({
             title: 'Production', // 指定html文件的title标签内容
