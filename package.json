@@ -1,5 +1,5 @@
 {
-  "name": "webpack_test",
+  "name": "use_webpack",
   "version": "1.0.0",
   "description": "learning webpack completely",
   "main": "index.js",
@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:specialCoder/webpack_test.git"
+    "url": "git@github.com:specialCoder/use-webpack.git"
   },
   "keywords": [
     "webpack"
   ],
-  "author": "specialCoder",
+  "author": "specialcoder",
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.17.10"
