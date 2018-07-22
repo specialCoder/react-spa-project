@@ -4,6 +4,8 @@
  * 2. 单独打包重复的包，设置别名挂在到window对象，再使用external
  * 3.DllPlugin reference URL: https://blog.csdn.net/suhuaiqiang_janlay/article/details/79715969
  */
+// "dll": "webpack --config webpack.dll.js",
+
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const path =require('path');

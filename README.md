@@ -22,6 +22,7 @@
   - Common:common.js
  + js文件
     - [bable-loader](https://github.com/babel/babel-loader)
+    - [.babelrc](https://www.babeljs.cn/docs/usage/babelrc/)
  + css文件：默认采用打包输出，没有生成单独的文件；支持less和scss;开启Css Module(规则：[local]-[hash:base64:5])
     - [style-loader](https://github.com/webpack-contrib/style-loader):js -> tag style
     - [css-loader](https://github.com/webpack-contrib/css-loader): css -> css in js
@@ -48,12 +49,12 @@
 
 - mode:'production'
 + optimization
-    - splitChunks
+    - [splitChunks](https://webpack.js.org/plugins/split-chunks-plugin/)
 
 4. server 部分
 
-- 使用express创建http服务
-- 使用webpack-dev-middleware，文件变更时实时编译
+- 使用[express][1]创建http服务
+- 使用[webpack-dev-middleware][2]，文件变更时实时编译
 - 所有路由重定向到入口文件，使用前端路由导航
 
 ## Install
@@ -66,12 +67,6 @@
 
 ## start
 
-改版之后首先要生成manifest.json文件：
-
-    npm run dll
-
-然后启动项目：
-
     npm start
 
 ## TODOLIST
@@ -83,3 +78,6 @@
 2. vue
     - [vue-cli](https://github.com/vuejs/vue-cli)
 3. none: 默认不引入框架的配置环境
+
+[1]:https://expressjs.com/
+[2]:https://github.com/webpack/webpack-dev-middleware
