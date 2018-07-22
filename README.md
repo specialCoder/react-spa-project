@@ -6,9 +6,9 @@
 
 主要有以下特点：
 
-1. 支持ES6 jsx 语法
-2. 支持vue 语法
-3. 可以根据场景需要裁剪或者扩展
+1. 支持ES6 jsx 语法 (doing)
+2. 支持vue 语法 （doing）
+3. 可以根据场景需要裁剪或者扩展 (done)
 
 -----
 
@@ -18,20 +18,20 @@
 > 配置内容详细见webpack.common.js。更多关于：生成css单独文件、CSS Module、css sourceMap等内容可以翻看具体的loader链接
 
  + 入口文件：
-  - App:index.js  
-  - Common:common.js
+  - App : index.js  
+  - Common : common.js
  + js文件
     - [bable-loader](https://github.com/babel/babel-loader)
     - [.babelrc](https://www.babeljs.cn/docs/usage/babelrc/)
  + css文件：默认采用打包输出，没有生成单独的文件；支持less和scss;开启Css Module(规则：[local]-[hash:base64:5])
-    - [style-loader](https://github.com/webpack-contrib/style-loader):js -> tag style
-    - [css-loader](https://github.com/webpack-contrib/css-loader): css -> css in js
-    - [less-loader](https://github.com/webpack-contrib/less-loader): less -> css
-    - [sass-loader](https://github.com/webpack-contrib/sass-loader): sass -> css
-    - [postcss-loader](https://github.com/postcss/postcss): Autoprefixer
-    - [MiniCssExtractPlugin](https://github.com/webpack-contrib/mini-css-extract-plugin):js -> file style
+    - [style-loader](https://github.com/webpack-contrib/style-loader) : js -> tag style
+    - [css-loader](https://github.com/webpack-contrib/css-loader) : css -> css in js
+    - [less-loader](https://github.com/webpack-contrib/less-loader) : less -> css
+    - [sass-loader](https://github.com/webpack-contrib/sass-loader) : sass -> css
+    - [postcss-loader](https://github.com/postcss/postcss) : Autoprefixer
+    - [MiniCssExtractPlugin](https://github.com/webpack-contrib/mini-css-extract-plugin) :js -> file style
  + 图片/字体：
-  - 默认开启[file-loader](https://github.com/webpack-contrib/file-loader):file module -> url
+  - 默认开启[file-loader](https://github.com/webpack-contrib/file-loader) : file module -> url
  - xml tsv等： 默认未开启处理
 
 2. 开发环境配置部分
@@ -59,7 +59,6 @@
 
 ## Before use
  - 因为默认使用了CSS Module,[CSS Module 详细参考](https://github.com/camsong/blog/issues/5)
-style.css：
     ```css
        .normal {
          color: green;
