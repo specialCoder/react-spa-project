@@ -5,10 +5,10 @@ const webpack = require('webpack');
  const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true'
 
  module.exports = merge(common, {
-  entry: {
-    app: ['./src/index.js',hotMiddlewareScript], // 入口文件index.js
-    another:['./src/another-module.js',hotMiddlewareScript]
-  },
+  // entry: {
+  //   app: ['./src/index.js',hotMiddlewareScript], // 入口文件index.js
+  //   another:['./src/another-module.js',hotMiddlewareScript]
+  // },
     mode:'development',
     plugins:[
       new CleanWebpackPlugin(['dist']),

@@ -1,7 +1,8 @@
-const path = require('path');// node的path模块
+const path = require('path');
 const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');// 清除指定的文件夹
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true'
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: {
@@ -11,10 +12,18 @@ module.exports = {
   module:{
     rules:[
       {
-        test:/\.css$/,
+        test: /\.(sa|sc|c)ss$/,
         use:[
+          // process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
           "style-loader",
-          'css-loader'
+          {
+            loader:'css-loader',
+            options:{
+              modules:true,
+              localIdentName:'[local]-[hash:base64:5]'
+            }
+          },
+          'postcss-loader'
         ],
     },
   //   {
@@ -24,23 +33,6 @@ module.exports = {
   //       "css-loader"
   //     ]
   // },
-    {
-        test:/\.less$/,
-        use:[
-          "style-loader",
-          'css-loader',
-          'less-loader'
-
-        ],
-    },
-    {
-      test:/\.scss$/,
-      use:[
-        "style-loader",
-        'css-loader',
-        'sass-loader'
-      ],
-    },
     {
        test: /\.(png|svg|jpg|gif)$/,
        use: [
@@ -67,9 +59,6 @@ module.exports = {
         // }
   ],
 },
-  // plugins: [
-  //   new CleanWebpackPlugin(['dist']),
-  // ],
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
