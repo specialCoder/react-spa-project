@@ -57,6 +57,27 @@
 - 使用[webpack-dev-middleware][2]，文件变更时实时编译
 - 所有路由重定向到入口文件，使用前端路由导航
 
+## Before use
+ - 因为默认使用了CSS Module,[CSS Module 详细参考](https://github.com/camsong/blog/issues/5)
+style.css：
+    ```css
+       .normal {
+         color: green;
+        }
+    ```
+
+    ```javascript
+        // without css module:
+        import './Button.css';
+        buttonElem.outerHTML = `<button class=${normal}>Submit</button>`
+    ```
+
+    ```javascript
+        // with css module
+        import styles from './Button.css';
+        buttonElem.outerHTML = `<button class=${styles.normal}>Submit</button>`
+    ```
+
 ## Install
 
     npm install
@@ -81,3 +102,7 @@
 
 [1]:https://expressjs.com/
 [2]:https://github.com/webpack/webpack-dev-middleware
+
+## Design Summary
+
+- webpack-hot-middle 要想起作用，还要在每一个要监听的入口文件加入`webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true`
