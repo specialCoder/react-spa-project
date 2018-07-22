@@ -5,8 +5,8 @@ const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&t
 
 module.exports = {
   entry: {
-    app:'./src/index.js',
-    common:'./src/common.js',
+    app:[hotMiddlewareScript, './src/index.js'],
+    common:[hotMiddlewareScript,'./src/common.js'],
   },
   module:{
     rules:[

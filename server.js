@@ -14,8 +14,8 @@ const devMiddlewareCompiler = webpackDevMiddleware(webpackConfig,{
     publicPath:config.output.publicPath
 });
 const hotMiddlewareCompiler = webpackHotMiddleware(webpackConfig,{
-    log: false,
-    heartbeat: 2000,
+    // log: false,
+    // heartbeat: 2000,
  })
 
 app.use(devMiddlewareCompiler);// 使用热编译中间件
