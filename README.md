@@ -4,10 +4,18 @@
 
 一个以webpack4为基础的现代工程模版,打造简单易用的webpack环境项目
 
+主要有以下特点：
+
+1. 支持ES6 jsx 语法
+2. 支持vue 语法
+3. 可以根据场景需要裁剪或者扩展
+
+-----
+
 主要包括：
 
 1. base部分
-> 配置内容详细见webpack.common.js，更多关于：生成css单独文件、CSS Module、css sourceMap等内容可以翻看具体的loader链接
+> 配置内容详细见webpack.common.js。更多关于：生成css单独文件、CSS Module、css sourceMap等内容可以翻看具体的loader链接
 
  - 入口文件： App:index.js  Common:common.js
  + css文件：默认采用打包输出，没有生成单独的文件；支持less和scss;开启Css Module(规则：[local]-[hash:base64:5])
@@ -21,14 +29,20 @@
  - xml tsv等： 默认未开启处理
 
 2. 开发环境配置部分
-> 详细见webpack.dev.js
+> 配置内容详细见webpack.dev.js
 
-- webpack4.X 指明环境 mode:'development'
-+ 开启热替换：编译之后自动刷新页面
-    - [hot-webpack-middleware]()
+- mode:'development'：webpack4.X 指明环境
+- hot-webpack-middleware
+- CleanWebpackPlugin
+- HtmlWebpackPlugin
+- NamedModulesPlugin
+- HotModuleReplacementPlugin
 
 3. 生产环境配置部分
+> 配置内容详细见webpack.prod.js
 
+- mode:'production'
+- optimization
 
 4. server 部分
 

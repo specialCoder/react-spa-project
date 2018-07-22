@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true'
 // const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -11,6 +10,9 @@ module.exports = {
   },
   module:{
     rules:[
+      {
+
+      },
       {
         test: /\.(sa|sc|c)ss$/,
         use:[

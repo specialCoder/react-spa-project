@@ -2,14 +2,11 @@
 //  const path = require('path');
  const merge = require('webpack-merge');
  const common = require('./webpack.common.js');
+ const CleanWebpackPlugin = require('clean-webpack-plugin');
  const HtmlWebpackPlugin = require('html-webpack-plugin');// 为html文件绑定bundle.js
 //  const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
  module.exports = merge(common, {
-    entry:{
-        app: './src/index.js', // 入口文件index.js
-        another:'./src/another-module.js'
-    },
      mode:'production',
      optimization: {
         splitChunks: {
