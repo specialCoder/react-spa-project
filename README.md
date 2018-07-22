@@ -21,7 +21,7 @@
   - App:index.js  
   - Common:common.js
  + js文件
-    - [bable-loader]()
+    - [bable-loader](https://github.com/babel/babel-loader)
  + css文件：默认采用打包输出，没有生成单独的文件；支持less和scss;开启Css Module(规则：[local]-[hash:base64:5])
     - [style-loader](https://github.com/webpack-contrib/style-loader):js -> tag style
     - [css-loader](https://github.com/webpack-contrib/css-loader): css -> css in js
@@ -47,7 +47,8 @@
 > 配置内容详细见webpack.prod.js
 
 - mode:'production'
-- optimization
++ optimization
+    - splitChunks
 
 4. server 部分
 

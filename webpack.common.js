@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true'
 // const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const babelrc = require('./.babelrc');
 
 module.exports = {
   entry: {
@@ -11,7 +12,14 @@ module.exports = {
   module:{
     rules:[
       {
-
+        test: /\.js$/,
+        include:path.resolve(__dirname,'src'), // 只引入需要的
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,// 开启目录缓存
+        },
+        }
       },
       {
         test: /\.(sa|sc|c)ss$/,
