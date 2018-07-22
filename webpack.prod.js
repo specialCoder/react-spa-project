@@ -33,6 +33,7 @@
         },
     },
      plugins:[
+        new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title: 'Production', // 指定html文件的title标签内容
             template:'./src/index.html', // 指定要使用的模版

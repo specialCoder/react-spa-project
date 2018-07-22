@@ -4,10 +4,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');// 清除指定的文
 const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true'
 
 module.exports = {
-  // entry: {
-  //   app: ['./src/index.js',hotMiddlewareScript], // 入口文件index.js
-  //   vendor:['./src/common.js',hotMiddlewareScript]
-  // },
+  entry: {
+    app:'./src/index.js',
+    common:'./src/common.js',
+  },
   module:{
     rules:[
       {
@@ -24,6 +24,23 @@ module.exports = {
   //       "css-loader"
   //     ]
   // },
+    {
+        test:/\.less$/,
+        use:[
+          "style-loader",
+          'css-loader',
+          'less-loader'
+
+        ],
+    },
+    {
+      test:/\.scss$/,
+      use:[
+        "style-loader",
+        'css-loader',
+        'sass-loader'
+      ],
+    },
     {
        test: /\.(png|svg|jpg|gif)$/,
        use: [
@@ -50,9 +67,9 @@ module.exports = {
         // }
   ],
 },
-  plugins: [
-    new CleanWebpackPlugin(['dist']),
-  ],
+  // plugins: [
+  //   new CleanWebpackPlugin(['dist']),
+  // ],
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
