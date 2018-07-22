@@ -18,12 +18,11 @@
   "author": "specialcoder",
   "license": "ISC",
   "dependencies": {
-    "babel-core": "^6.26.3",
-    "babel-runtime": "^6.26.0",
-    "lodash": "^4.17.10"
+    "babel-runtime": "^6.26.0"
   },
   "sideEffects": false,
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",

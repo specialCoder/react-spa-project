@@ -1,4 +1,3 @@
- import _ from 'lodash';
  import Icon from './blue.png';
  import printMe from './print.js';
  import { cube } from './math.js';
@@ -29,7 +28,7 @@
     element.appendChild(btn);
     
     element.appendChild(myIcon);
-    console.log('satrt ---------------------------->');
+    console.log('satrt ~');
     return element;
   }
 

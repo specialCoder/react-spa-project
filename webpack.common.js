@@ -18,7 +18,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             cacheDirectory: true,// 开启目录缓存
-        },
+          },
         }
       },
       {
