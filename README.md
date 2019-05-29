@@ -1,4 +1,4 @@
-# webpack-init-project
+# webpack-init
 
 ## Introduction
 
@@ -89,15 +89,6 @@
 
     npm start
 
-## TODOLIST
-
-开发一个脚手架，让用户自己选择框架安装，是webpack环境配置更加具有针对性
-
-1. react
-    - [create-react-app](https://github.com/webpack-contrib/webpack-hot-middleware)
-2. vue
-    - [vue-cli](https://github.com/vuejs/vue-cli)
-3. none: 默认不引入框架的配置环境
 
 [1]:https://expressjs.com/
 [2]:https://github.com/webpack/webpack-dev-middleware
