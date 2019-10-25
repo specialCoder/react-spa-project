@@ -1,18 +1,20 @@
 {
-    "presets":[
-        ["env", {
-            "targets": {
-              "node": "current"
-            }
-          }],
-        "stage-0"
-    ],
-    "plugins":[
-        ["transform-runtime", {
-            "helpers": false,
-            "polyfill": false,
-            "regenerator": true,
-            "moduleName": "babel-runtime"
-          }]
+  "presets": [
+    ["@babel/preset-env", {
+      // Disable polyfill transforms
+      "useBuiltIns": "usage",
+      "corejs": 2,
+      // Do not transform modules to CJS
+      "modules":false
+    }],
+    ["@babel/react"]
+],
+  "plugins":[
+       ["@babel/plugin-transform-runtime", {
+           "corejs": 2
+       }],
+       ["@babel/plugin-proposal-decorators", { 
+         "legacy": true 
+         }]
     ]
 }

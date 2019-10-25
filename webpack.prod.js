@@ -2,12 +2,16 @@
 //  const path = require('path');
  const merge = require('webpack-merge');
  const common = require('./webpack.common.js');
- const CleanWebpackPlugin = require('clean-webpack-plugin');
- const HtmlWebpackPlugin = require('html-webpack-plugin');// 为html文件绑定bundle.js
 //  const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
  module.exports = merge(common, {
      mode:'production',
+     devtool:'none',
+     // 生产环境使用CDN加速
+     externals:{
+        react: 'React',
+        'react-dom': 'ReactDOM',
+    },
      optimization: {
         splitChunks: {
             chunks: 'initial', // 只对入口文件处理
@@ -18,24 +22,10 @@
                     priority: 10,
                     enforce: true
                 },
-                commons: { // split `common`和`components`目录下被打包的代码到`page/commons.js && .css`
-                    // test: /common\/|components\//,
-                    test:'./src',
-                    name: 'common',
-                    minSize:30000,
-                    minChunks:2,
-                    priority: 10,
-                    enforce: true
-                }
             }
         },
     },
      plugins:[
-        new CleanWebpackPlugin(['dist']),
-        new HtmlWebpackPlugin({
-            title: 'Production', // 指定html文件的title标签内容
-            template:'./src/index.html', // 指定要使用的模版
-          }),
         // new MiniCssExtractPlugin({
         //     filename: devMode ? '[name].css' : '[name].[hash].css',
         //     chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
