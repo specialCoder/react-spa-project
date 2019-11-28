@@ -4,9 +4,9 @@
   "description": "learning webpack completely",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development webpack --color --progress clear--config webpack.dev.js",
-    "build": "NODE_ENV=production webpack --config webpack.prod.js",
-    "start": "node server.js"
+    "eslint": "eslint --ext .js,.jsx --fix",
+    "dev": "NODE_ENV=development webpack --color --progress --config webpack.dev.js",
+    "build": "NODE_ENV=production webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -18,31 +18,34 @@
   "author": "specialcoder",
   "license": "ISC",
   "dependencies": {
-    "@babel/polyfill": "^7.6.0",
+    "@babel/polyfill": "^7.7.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2"
   },
   "sideEffects": false,
   "devDependencies": {
-    "@babel/cli": "^7.6.4",
-    "@babel/core": "^7.6.4",
-    "@babel/plugin-proposal-decorators": "^7.6.0",
-    "@babel/plugin-transform-runtime": "^7.6.2",
-    "@babel/preset-env": "^7.6.3",
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-decorators": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "autoprefix": "^1.0.1",
     "babel-loader": "^7.1.5",
-    "clean-webpack-plugin": "^0.1.19",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.5",
     "css-loader": "^3.2.0",
-    "file-loader": "^4.2.0",
+    "eslint": "^6.7.1",
+    "file-loader": "^4.3.0",
     "html-webpack-plugin": "^3.2.0",
     "less-loader": "^4.1.0",
     "mini-css-extract-plugin": "^0.4.0",
     "postcss-loader": "^2.1.6",
     "raw-loader": "^3.1.0",
-    "style-loader": "^1.0.0",
-    "webpack": "^4.8.3",
-    "webpack-cli": "^2.1.3",
-    "webpack-dev-server": "^3.1.4",
-    "webpack-merge": "^4.1.2"
+    "style-loader": "^1.0.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2"
   }
 }

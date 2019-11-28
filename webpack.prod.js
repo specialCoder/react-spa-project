@@ -1,7 +1,8 @@
-//  const webpack = require('webpack');
-//  const path = require('path');
- const merge = require('webpack-merge');
- const common = require('./webpack.common.js');
+const merge = require('webpack-merge');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const common = require('./webpack.common.js');
 //  const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
  module.exports = merge(common, {
@@ -25,10 +26,12 @@
             }
         },
     },
-     plugins:[
-        // new MiniCssExtractPlugin({
-        //     filename: devMode ? '[name].css' : '[name].[hash].css',
-        //     chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
-        // })
-     ]
+    plugins:[
+        new CleanWebpackPlugin(['dist']),
+        new HtmlWebpackPlugin({
+          title: 'title', // 指定html文件的title标签内容 ????
+          template:path.join(__dirname,'src/index.prod.html'), // 指定要使用的模版
+        }),
+        new webpack.NoEmitOnErrorsPlugin()
+      ],
  });

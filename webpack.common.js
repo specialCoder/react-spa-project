@@ -19,19 +19,20 @@ const commmonCssLoader = [
     }
   }
 ];
+
 module.exports = {
   entry: {
-    app:path.join(__dirname,'src/index.js'),
+    app:path.join(__dirname,'src/app.js'),
   },
   module:{
     rules:[
       {
         test: /\.js$/,
-        include:path.resolve(__dirname,'src'),// node_modules 里面的不用转译
+        include:path.resolve(__dirname,'src'),
         use: {
           loader: 'babel-loader',
           options: {
-            cacheDirectory: true,// 开启目录缓存
+            cacheDirectory: true,
           },
         }
       },
@@ -68,19 +69,11 @@ module.exports = {
       use: 'raw-loader' 
     }],
   },
-  plugins:[
-    new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
-      title: 'title', // 指定html文件的title标签内容
-      template:path.join(__dirname,'src/index.html'), // 指定要使用的模版
-    }),
-  ],
   resolve:{
     alias:{
       "src":path.resolve(__dirname,'src'),
       "components":path.resolve(__dirname,'src/components'),
       "utils":path.resolve(__dirname,'src/utils'),
-
     }
   },
   externals:{
