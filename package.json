@@ -18,7 +18,9 @@
   "author": "specialcoder",
   "license": "ISC",
   "dependencies": {
-    "@babel/polyfill": "^7.6.0"
+    "@babel/polyfill": "^7.6.0",
+    "react": "^16.12.0",
+    "react-router-dom": "^5.1.2"
   },
   "sideEffects": false,
   "devDependencies": {
