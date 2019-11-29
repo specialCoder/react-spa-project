@@ -1,10 +1,12 @@
-import {PureComponent} from "react";
-import * as ReactDOM from "react-router-dom";
+import React,{PureComponent} from "react";
+import ReactDOM from "react-dom";
 import {
-  BrowserRouter as Router
+  BrowserRouter as Router,
+  Switch,
+  Route
 } from "react-router-dom";
-import NotFound from "./components/NotFound";
-import Home from "./pages/Home";
+import NotFound from "./components/NotFound/index.jsx";
+import Home from "./pages/Home/index.jsx";
 
 class App extends PureComponent{
   render(){

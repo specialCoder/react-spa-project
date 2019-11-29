@@ -22,13 +22,13 @@ const commmonCssLoader = [
 
 module.exports = {
   entry: {
-    app:path.resolve(__dirname,"src/app.js"),
+    app:path.resolve(__dirname,"src","app.js"),
   },
   module:{
     rules:[
       {
         test: /\.jsx?$/,
-        include:path.resolve(__dirname,"src"),
+        include:path.resolve(__dirname,"./src"),
         use: {
           loader: "babel-loader",
           options: {
@@ -71,19 +71,16 @@ module.exports = {
   },
   resolve:{
     alias:{
-      // "src":path.resolve(__dirname,"src/"),
       "components":path.resolve(__dirname,"src/components/"),
       "utils":path.resolve(__dirname,"src/utils/"),
       "pages":path.resolve(__dirname,"src/pages/"),
     }
   },
-  externals:{
-
-  },
+  externals:[".js",".jsx"],
   output: {
     filename: "[name].[hash].js",
-    // chunkname 未被列在entry中，却又需要被打包出来的文件命名配置
     chunkFilename: "[name].[chunkhash:8].js",
     path: path.resolve(__dirname, "dist"),
+    publicPath:"/"
   },
 };
