@@ -3,7 +3,6 @@
     ["@babel/preset-env", {
       // Disable polyfill transforms
       "useBuiltIns": "usage",
-      "corejs": 2,
       // Do not transform modules to CJS
       "modules":false
     }],
@@ -11,7 +10,10 @@
 ],
   "plugins":[
        ["@babel/plugin-transform-runtime", {
-           "corejs": 2
+        "absoluteRuntime": false,
+        "helpers": true,
+        "regenerator": true,
+        "useESModules": false
        }],
        ["@babel/plugin-proposal-decorators", { 
          "legacy": true 
