@@ -13,11 +13,13 @@ const commmonCssLoader = [
     }
   },
   {
-    loader:"postcss-loader",
-    options:{
-      plugins:[autoprefix]
+    loader: 'postcss-loader',
+    options: {
+        postcssOptions: {
+            plugins: ['autoprefixer']
+        }
     }
-  }
+}
 ];
 
 module.exports = {

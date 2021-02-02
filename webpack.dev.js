@@ -3,6 +3,7 @@ const path = require("path");
 const merge = require("webpack-merge");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
 const common = require("./webpack.common.js");
 
@@ -14,6 +15,8 @@ module.exports = merge(common, {
       title: "title", // 指定html文件的title标签内容 ????
       template:path.resolve(__dirname,"static/html/index.dev.html"), // 指定要使用的模版
     }),
+    // webpack bundle analyzer
+    // new BundleAnalyzerPlugin(),
   ],
   devtool: "inline-source-map",
   devServer:{
@@ -21,7 +24,7 @@ module.exports = merge(common, {
     compress:true,
     proxy:{
     },
-    port:8888,
+    port:3000,
     historyApiFallback: true,
   }
 });

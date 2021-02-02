@@ -6,16 +6,28 @@ import {
   Route
 } from "react-router-dom";
 import NotFound from "./components/NotFound/index.jsx";
-import Home from "./pages/Home/index.jsx";
+import { Layout } from 'antd';
+import AppHeader from 'components/Header/index.jsx';
+import 'antd/dist/antd.css';
+import ClassPage from './pages/ClassPage/index.jsx';
+import HookPage from './pages/HookPage/index.jsx';
 
 class App extends PureComponent{
   render(){
-    return (<Router basename="">
-      <Switch>
-        <Route path='/' component={Home}/>
-        <Route component={NotFound}/>
-      </Switch>
-    </Router>);
+    return (
+    <Layout>
+      <Router basename="">
+        <AppHeader/>
+        <Layout>
+            <Switch>
+              <Route exact path='/'><ClassPage /></Route>
+              <Route path='/nav1'><ClassPage /></Route>
+              <Route path='/nav2'><HookPage /></Route>
+              <Route><NotFound /></Route>
+            </Switch>
+        </Layout>
+      </Router>
+    </Layout>);
   }
 }
 
