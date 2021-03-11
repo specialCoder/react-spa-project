@@ -32,7 +32,7 @@ module.exports = merge(common, {
     new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: "title", // 指定html文件的title标签内容 ????
+      title: "App Demo",
       template:path.resolve(__dirname,"static/html/index.prod.html"), // 指定要使用的模版
     }),
     new webpack.NoEmitOnErrorsPlugin()
