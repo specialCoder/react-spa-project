@@ -1,5 +1,4 @@
 const path = require("path");
-const autoprefix=require("autoprefix");
 
 const commmonCssLoader = [
   {
@@ -13,13 +12,8 @@ const commmonCssLoader = [
     }
   },
   {
-    loader: 'postcss-loader',
-    options: {
-        postcssOptions: {
-            plugins: ['autoprefixer']
-        }
-    }
-}
+    loader: "postcss-loader",
+  }
 ];
 
 module.exports = {

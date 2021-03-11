@@ -1,10 +1,10 @@
-import React,{ PureComponent} from 'react';
+import React,{ PureComponent} from "react";
 
 class ClassPage extends PureComponent{
   render(){
     return <>
       class-page
-    </>
+    </>;
   }
 }
 

@@ -23,6 +23,7 @@ module.exports = {
         "semi": ["error", "always"], // 分号
         // disable rules from base configurations
         "no-console": "off",
+        'no-unused-vars': ['warn'],
     },
     "settings": {
         "react": {
