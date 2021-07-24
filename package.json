@@ -1,6 +1,6 @@
 {
-  "name": "conan-react-cli",
-  "version": "0.0.2",
+  "name": "react-spa-project",
+  "version": "0.0.3",
   "description": "B端react项目模版,使用Typescript语法编写，webpack5打包。",
   "main": "index.js",
   "scripts": {
