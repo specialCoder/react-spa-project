@@ -5,9 +5,15 @@
         // Disable polyfill transforms
         "useBuiltIns": "usage",
         // Do not transform modules to CJS
-        "modules":false
+        "modules":false,
+        // core 3
+        "corejs": 3
       }
     ],
+    ["@babel/preset-typescript", {
+      "isTSX": true,
+      "allExtensions": true
+    }],
     ["@babel/react"]
   ],
   "plugins":[
@@ -24,11 +30,6 @@
            "legacy": true 
           }
         ],
-      ["@babel/plugin-proposal-class-properties"],
-      ["import",{
-          "libraryName": "antd",
-          "libraryDirectory": "es",   // default: lib
-          "style": true
-      }]
+      ["@babel/plugin-proposal-class-properties"]
     ]
 }

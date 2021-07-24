@@ -1,63 +1,90 @@
 {
-  "name": "webpack-init-project",
-  "version": "1.0.1",
-  "description": "learning webpack completely",
+  "name": "conan-react-cli",
+  "version": "0.0.2",
+  "description": "B端react项目模版,使用Typescript语法编写，webpack5打包。",
   "main": "index.js",
   "scripts": {
     "watch": "webpack --watch",
-    "start": "NODE_ENV=development webpack-dev-server --config webpack.dev.js --open",
-    "lint": "eslint src --ext .js,.jsx --fix",
-    "build": "NODE_ENV=production webpack --color --processs --config webpack.prod.js"
+    "start": "cross-env NODE_ENV=development webpack serve --mode development --config webpack.dev.js",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "build": "cross-env NODE_ENV=production webpack --mode production --color --progress --config webpack.prod.js",
+    "build:test": "cross-env NODE_ENV=test webpack --mode production --color --progress --config webpack.prod.js",
+    "release": "standard-version",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{.ts,.tsx,.js,.jsx}": [
+      "npm run lint",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:specialCoder/use-webpack.git"
+    "url": "ssh://zhubenlei@gerrit.zhenguanyu.com:29418/conan-react-cli"
   },
   "keywords": [
-    "webpack"
+    "react",
+    "typescript"
   ],
   "author": "specialcoder",
   "license": "ISC",
   "dependencies": {
-    "@babel/polyfill": "^7.7.0",
-    "antd": "^4.11.2",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@types/react-router-dom": "^5.1.7",
+    "antd": "^4.15.1",
     "axios": "^0.21.1",
-    "less": "^3.13.1",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-router-dom": "^5.2.0"
+    "core-js": "^3.15.2",
+    "dotenv": "^10.0.0",
+    "less": "^4.1.1",
+    "postcss": "^8.2.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "typescript": "^4.2.4"
   },
-  "sideEffects": false,
   "devDependencies": {
-    "@babel/cli": "^7.7.4",
-    "@babel/core": "^7.7.4",
-    "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/plugin-proposal-decorators": "^7.7.4",
-    "@babel/plugin-transform-runtime": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
-    "@babel/preset-react": "^7.7.4",
-    "autoprefix": "^1.0.1",
-    "autoprefixer": "^10.2.4",
-    "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
+    "@babel/core": "^7.13.15",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-decorators": "^7.13.15",
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
+    "antd-dayjs-webpack-plugin": "^1.0.6",
+    "autoprefixer": "^10.2.5",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
     "babel-plugin-import": "^1.13.3",
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^5.0.5",
-    "css-loader": "^4.3.0",
-    "eslint": "^6.7.1",
-    "eslint-plugin-react": "^7.16.0",
-    "file-loader": "^4.3.0",
-    "html-webpack-plugin": "^4.5.1",
-    "less-loader": "^4.1.0",
-    "mini-css-extract-plugin": "^0.4.0",
-    "postcss": "^8.2.8",
-    "postcss-loader": "^4.2.0",
-    "raw-loader": "^3.1.0",
-    "style-loader": "^1.3.0",
-    "webpack": "^4.41.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.1",
+    "css-minimizer-webpack-plugin": "^1.3.0",
+    "eslint": "^7.24.0",
+    "eslint-plugin-react": "^7.23.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "husky": "^6.0.0",
+    "less-loader": "^8.1.0",
+    "mini-css-extract-plugin": "^1.4.1",
+    "postcss-loader": "^5.2.0",
+    "raw-loader": "^4.0.2",
+    "standard-version": "^9.2.0",
+    "style-loader": "^2.0.0",
+    "svgo": "^2.3.0",
+    "svgo-loader": "^3.0.0",
+    "webpack": "^5.31.2",
     "webpack-bundle-analyzer": "^4.4.0",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0",
-    "webpack-merge": "^4.2.2"
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3",
+    "worker-loader": "^3.0.8"
   }
 }

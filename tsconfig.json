@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "declaration": true,
+    "noImplicitAny": true,
+    "strict": true,
+    "lib": ["esnext", "dom"],
+    "jsx": "react",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "traceResolution": true,
+    "moduleResolution": "node"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

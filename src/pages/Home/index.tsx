@@ -18,12 +18,12 @@ const Home = () => {
   const [keyPath, setKeypath] = useState(['1','sub1']);
   const [collapsed,setCollapsed] = useState(false);
 
-  const handleClick = ({ key, keyPath}) => {
+  const handleClick = ({ key, keyPath}:any) => {
     console.log('click ', keyPath);
     setKeypath(keyPath);
   };
 
-  const onCollapse = (collapsed) => {
+  const onCollapse = (collapsed:boolean) => {
     setCollapsed(collapsed);
   };
 

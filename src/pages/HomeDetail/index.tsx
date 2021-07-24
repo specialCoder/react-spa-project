@@ -1,8 +1,8 @@
 import React from 'react';
 
-const HookPage = ()=>{
+const HookPage = () => {
   return <>
-    hook-page
+    <p>home detail</p>
   </>;
 };
 

@@ -1,11 +1,19 @@
 .header-container{
   display:flex;
+  justify-content: space-between;
+  .header-content{
+    flex:1;
+    display: flex;
+  }
   .logo{
     width:180px;
     color:#1890FF;
     padding:0 12px;
     font-weight: 500;
     font-size:18px;
+  }
+  .user-name{
+    color:#fff;
   }
 }
 .header-container.ant-layout-header{
