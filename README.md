@@ -36,7 +36,6 @@
 ├── webpack.common.js           - webpack common config
 ├── webpack.dev.js              - webpack development extra config
 ├── webpack.prod.js             - webpack production extra config
-├── saber.yml                   - CI/CD config
 ├── .npmrc                      - npm setting
 ├── package.json
 ├── README.md
@@ -70,6 +69,7 @@ npm run start
 ```
 
 访问地址：
+
 ```
 localhost:3000
 // host: 127.0.0.1 local.zhenguanyu.com
