@@ -1,4 +1,4 @@
-# {name}
+# 项目说明
 
 ### 目录
 
@@ -72,6 +72,4 @@ npm run start
 
 ```
 localhost:3000
-// host: 127.0.0.1 local.zhenguanyu.com
-local.zhenguanyu.com:3000
 ```
